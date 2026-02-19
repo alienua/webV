@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MilkyWish — Privacy Policy</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #e8e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Subtle star background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 35% 55%, rgba(255,255,255,0.4) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .app-icon {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 12px rgba(153, 204, 255, 0.6));
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    header .app-name {
+      font-size: 1rem;
+      color: rgba(153, 204, 255, 0.8);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(153, 204, 255, 0.6), transparent);
+      margin: 24px auto 0;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: rgba(153, 204, 255, 0.9);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(153, 204, 255, 0.15);
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: rgba(232, 232, 240, 0.85);
+      white-space: pre-line;
+    }
+
+    .section-body a {
+      color: rgba(153, 204, 255, 0.9);
+      text-decoration: none;
+    }
+
+    .section-body a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    footer a {
+      color: rgba(153, 204, 255, 0.6);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <span class="app-icon">&#11088;</span>
+      <h1>Privacy Policy</h1>
+      <p class="app-name">MilkyWish</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="section">
+      <div class="section-title">Last updated: February 17, 2026</div>
+      <div class="section-body">MilkyWish ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights. By using MilkyWish you agree to this policy.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">1. Information We Collect</div>
+      <div class="section-body"><strong style="color:#c9deff;">Location Data</strong>
+MilkyWish requests access to your device location ("While Using the App") to generate your personalised star sky and attach approximate GPS coordinates to stars you publish. We do not track your location in the background.
+
+<strong style="color:#c9deff;">Anonymous Account Identifier</strong>
+Firebase Authentication automatically assigns you a random anonymous user ID (UID) with no connection to your name, email, or Apple ID. It is used solely to associate your published stars with you.
+
+<strong style="color:#c9deff;">Star Content</strong>
+When you publish a star you provide a star name, wish message, drawing strokes, and GPS coordinates. This content is stored in Google Cloud Firestore and is publicly visible to all MilkyWish users until it expires.
+
+<strong style="color:#c9deff;">Device Cache</strong>
+Recently loaded stars are cached in local device storage (UserDefaults) for offline use only.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. Information We Do NOT Collect</div>
+      <div class="section-body">We do not collect your name, email, phone number, or Apple ID. We do not collect location history, device advertising identifiers, payment information, biometric data, or any data from your contacts, photos, microphone, or camera.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3. How We Use Your Information</div>
+      <div class="section-body">We use information only to display your personalised star sky, show published stars on the Wish Map, automatically remove expired stars, and provide offline caching. We do not use your information for advertising, profiling, or selling to third parties.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4. Third-Party Services</div>
+      <div class="section-body"><strong style="color:#c9deff;">Google Firebase</strong> — processes anonymous authentication and stores star data on Google Cloud servers. Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+
+<strong style="color:#c9deff;">Apple CoreLocation</strong> — handles location on-device. Apple's privacy policy applies at the OS level.
+
+Neither Google nor Apple receives your content for advertising purposes.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. Data Retention</div>
+      <div class="section-body">Stars are automatically deleted when they reach their chosen expiry date (1 day to 1 year). Your anonymous Firebase UID persists until you delete the app. Deleting the app removes your local cache but published stars remain until they expire. Contact us at <a href="mailto:privacy@milkywish.app">privacy@milkywish.app</a> to request early deletion.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. Children's Privacy</div>
+      <div class="section-body">MilkyWish is not directed to children under 13. We do not knowingly collect personal information from children under 13. Contact us at <a href="mailto:privacy@milkywish.app">privacy@milkywish.app</a> if you believe a child has submitted content.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">7. Your Rights</div>
+      <div class="section-body">You may have rights to know what data we hold, request deletion, or opt out of location data collection by denying location permission in iOS Settings. To exercise these rights contact: <a href="mailto:privacy@milkywish.app">privacy@milkywish.app</a></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Security</div>
+      <div class="section-body">Firebase security rules restrict database access so star data is readable by all authenticated users and writable only by the author's UID. We do not store passwords or sensitive personal data.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Changes to This Policy</div>
+      <div class="section-body">We may update this policy from time to time. We will update the date at the top of this document. Continued use after changes constitutes acceptance.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Contact Us</div>
+      <div class="section-body"><a href="mailto:privacy@milkywish.app">privacy@milkywish.app</a></div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 MilkyWish &nbsp;&middot;&nbsp; <a href="privacy-choices.html">Privacy Choices</a></p>
+    </footer>
+  </div>
+</body>
+</html>

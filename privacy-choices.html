@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MilkyWish — Your Privacy Choices</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #e8e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Subtle star background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 35% 55%, rgba(255,255,255,0.4) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .app-icon {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 12px rgba(153, 204, 255, 0.6));
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    header .app-name {
+      font-size: 1rem;
+      color: rgba(153, 204, 255, 0.8);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(153, 204, 255, 0.6), transparent);
+      margin: 24px auto 0;
+    }
+
+    .intro {
+      font-size: 0.97rem;
+      color: rgba(232, 232, 240, 0.8);
+      margin-bottom: 48px;
+      text-align: center;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Choice cards */
+    .choice-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(153, 204, 255, 0.15);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .choice-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .choice-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 6px rgba(153, 204, 255, 0.4));
+    }
+
+    .choice-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: rgba(153, 204, 255, 0.95);
+    }
+
+    .choice-body {
+      font-size: 0.93rem;
+      color: rgba(232, 232, 240, 0.78);
+      margin-bottom: 16px;
+      white-space: pre-line;
+    }
+
+    /* Action button */
+    .action-btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .action-btn:hover {
+      opacity: 0.8;
+    }
+
+    .action-btn-primary {
+      background: rgba(153, 204, 255, 0.18);
+      border: 1px solid rgba(153, 204, 255, 0.45);
+      color: rgba(153, 204, 255, 0.95);
+    }
+
+    .action-btn-secondary {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(232, 232, 240, 0.8);
+    }
+
+    /* No tracking banner */
+    .no-tracking-banner {
+      background: rgba(80, 200, 120, 0.07);
+      border: 1px solid rgba(80, 200, 120, 0.25);
+      border-radius: 12px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 40px;
+      font-size: 0.92rem;
+      color: rgba(160, 230, 180, 0.9);
+    }
+
+    .no-tracking-banner .nt-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Section heading */
+    .section-heading {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(153, 204, 255, 0.45);
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    footer a {
+      color: rgba(153, 204, 255, 0.6);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header>
+      <span class="app-icon">&#11088;</span>
+      <h1>Your Privacy Choices</h1>
+      <p class="app-name">MilkyWish</p>
+      <div class="divider"></div>
+    </header>
+
+    <p class="intro">
+      MilkyWish respects your privacy. Below you'll find all the controls available to you — what data we handle, and exactly how to manage or remove it.
+    </p>
+
+    <div class="no-tracking-banner">
+      <span class="nt-icon">&#9989;</span>
+      <span><strong>MilkyWish does not track you across other apps or websites.</strong> We do not use your data for advertising or sell it to third parties.</span>
+    </div>
+
+    <div class="section-heading">Location Data</div>
+
+    <div class="choice-card">
+      <div class="choice-card-header">
+        <span class="choice-icon">&#128205;</span>
+        <span class="choice-title">Opt Out of Location Access</span>
+      </div>
+      <div class="choice-body">MilkyWish requests "When In Use" location permission to generate your personalised star sky and attach approximate GPS coordinates to published stars. We never track your location in the background.
+
+To revoke location permission at any time:</div>
+      <ol style="font-size:0.93rem; color:rgba(232,232,240,0.78); padding-left:20px; margin-bottom:16px; line-height:2;">
+        <li>Open <strong style="color:#e8e8f0;">Settings</strong> on your iPhone</li>
+        <li>Scroll down and tap <strong style="color:#e8e8f0;">MilkyWish</strong></li>
+        <li>Tap <strong style="color:#e8e8f0;">Location</strong> and select <strong style="color:#e8e8f0;">Never</strong></li>
+      </ol>
+      <p style="font-size:0.88rem; color:rgba(232,232,240,0.5);">Note: core app features require location to function.</p>
+    </div>
+
+    <div class="section-heading">Published Star Content</div>
+
+    <div class="choice-card">
+      <div class="choice-card-header">
+        <span class="choice-icon">&#128197;</span>
+        <span class="choice-title">Stars Expire Automatically</span>
+      </div>
+      <div class="choice-body">Every star you publish is automatically deleted at the expiry date you chose (1 day to 1 year). No action is required on your part.</div>
+    </div>
+
+    <div class="choice-card">
+      <div class="choice-card-header">
+        <span class="choice-icon">&#128465;</span>
+        <span class="choice-title">Request Early Deletion of Your Data</span>
+      </div>
+      <div class="choice-body">You can request early deletion of your published stars or your anonymous account at any time by contacting us. We will process your request promptly.</div>
+      <a class="action-btn action-btn-primary" href="mailto:privacy@milkywish.app?subject=Data%20Deletion%20Request&body=Please%20delete%20all%20data%20associated%20with%20my%20MilkyWish%20account.">
+        Email privacy@milkywish.app
+      </a>
+    </div>
+
+    <div class="section-heading">Local Cache</div>
+
+    <div class="choice-card">
+      <div class="choice-card-header">
+        <span class="choice-icon">&#128247;</span>
+        <span class="choice-title">Clear Local Cache</span>
+      </div>
+      <div class="choice-body">Recently viewed stars are stored locally on your device (UserDefaults) for offline use only. Deleting the app removes all locally cached data immediately.</div>
+      <p style="font-size:0.88rem; color:rgba(232,232,240,0.5);">To delete the app: long-press the MilkyWish icon &rarr; Remove App &rarr; Delete App.</p>
+    </div>
+
+    <div class="section-heading">Additional Rights</div>
+
+    <div class="choice-card">
+      <div class="choice-card-header">
+        <span class="choice-icon">&#9993;</span>
+        <span class="choice-title">Exercise Your Privacy Rights</span>
+      </div>
+      <div class="choice-body">Depending on your location you may have additional rights, including the right to access the data we hold about you, correct inaccurate data, or restrict processing. To exercise any of these rights, contact us:</div>
+      <a class="action-btn action-btn-primary" href="mailto:privacy@milkywish.app?subject=Privacy%20Rights%20Request">
+        privacy@milkywish.app
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        <a href="privacy-policy.html">Full Privacy Policy</a>
+        &nbsp;&middot;&nbsp;
+        &copy; 2026 MilkyWish
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
