@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MilkyWish — Support</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #e8e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Subtle star background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 35% 55%, rgba(255,255,255,0.4) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .app-icon {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 12px rgba(153, 204, 255, 0.6));
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    header .app-name {
+      font-size: 1rem;
+      color: rgba(153, 204, 255, 0.8);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(153, 204, 255, 0.6), transparent);
+      margin: 24px auto 0;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: rgba(153, 204, 255, 0.9);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(153, 204, 255, 0.15);
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: rgba(232, 232, 240, 0.85);
+      white-space: pre-line;
+    }
+
+    .section-body a {
+      color: rgba(153, 204, 255, 0.9);
+      text-decoration: none;
+    }
+
+    .section-body a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: rgba(232, 232, 240, 0.85);
+    }
+
+    .contact-card {
+      background: rgba(153, 204, 255, 0.05);
+      border: 1px solid rgba(153, 204, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: rgba(232, 232, 240, 0.7);
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(153, 204, 255, 0.9);
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    footer a {
+      color: rgba(153, 204, 255, 0.6);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <span class="app-icon">&#11088;</span>
+      <h1>Support</h1>
+      <p class="app-name">MilkyWish</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="section">
+      <div class="section-title">What is MilkyWish?</div>
+      <div class="section-body">MilkyWish lets you send wishes to the stars. Name a star, write your wish, draw on it, and release it into a shared sky visible to everyone. Each star lives for a chosen time — from a single day to a whole year — before it fades away.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Frequently Asked Questions</div>
+      <div class="section-body">
+        <div class="faq-item">
+          <div class="faq-question">Why does MilkyWish need my location?</div>
+          <div class="faq-answer">Location is used to place your star on the Wish Map at the right spot in the sky for your part of the world. It is only accessed while the app is open — never in the background.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I delete a star I published?</div>
+          <div class="faq-answer">Stars expire automatically at the end of their chosen lifetime. If you need a star removed sooner, email us at <a href="mailto:mykytaiosdeveloper@gmail.com">mykytaiosdeveloper@gmail.com</a> and we will delete it manually.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is my personal information stored?</div>
+          <div class="faq-answer">No. MilkyWish never asks for your name, email, or Apple ID. You are assigned a random anonymous ID — nothing that identifies you personally is stored.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Stars are not loading — what should I do?</div>
+          <div class="faq-answer">Check your internet connection, then close and reopen the app. If the problem continues, delete and reinstall MilkyWish. If it still occurs, please contact us.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I delete all my data?</div>
+          <div class="faq-answer">Delete the app to remove your local cache. To also remove your published stars and anonymous account from our servers, email us and we will handle it within 30 days. You can also visit our <a href="privacy-choices.html">Privacy Choices</a> page to submit a request.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Contact Us</div>
+      <div class="section-body">We typically respond within 1–2 business days.</div>
+      <br>
+      <div class="contact-card">
+        <p>Have a question, found a bug, or need help?</p>
+        <a href="mailto:mykytaiosdeveloper@gmail.com">mykytaiosdeveloper@gmail.com</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 MilkyWish &nbsp;&middot;&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="privacy-choices.html">Privacy Choices</a></p>
+    </footer>
+  </div>
+</body>
+</html>
